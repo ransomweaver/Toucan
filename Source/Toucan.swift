@@ -381,7 +381,6 @@ public class Toucan : NSObject {
         public static func overlayImage(image: UIImage, overlayImage: UIImage, overlayFrame: CGRect) -> UIImage {
 
             let imgRef = Util.CGImageWithCorrectOrientation(image)
-            let overlayRef = Util.CGImageWithCorrectOrientation(overlayImage)
             let size = CGSize(width: CGFloat(CGImageGetWidth(imgRef)) / image.scale, height: CGFloat(CGImageGetHeight(imgRef)) / image.scale)
             
             return Util.drawImageWithClosure(size: size) { (size: CGSize, context: CGContext) -> () in
