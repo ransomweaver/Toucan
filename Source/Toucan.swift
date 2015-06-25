@@ -297,7 +297,7 @@ public class Toucan : NSObject {
                     
                     if (borderWidth > 0) {
                         CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-                        CGContextSetLineCap(context, kCGLineCapButt);
+                        CGContextSetLineCap(context, .Butt);
                         CGContextSetLineWidth(context, borderWidth);
                         CGContextAddEllipseInRect(context, CGRect(x: borderWidth / 2,
                             y: borderWidth / 2,
@@ -334,7 +334,7 @@ public class Toucan : NSObject {
                     
                     if (borderWidth > 0) {
                         CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-                        CGContextSetLineCap(context, kCGLineCapButt);
+                        CGContextSetLineCap(context, .Butt);
                         CGContextSetLineWidth(context, borderWidth);
                         
                         let borderRect = CGRect(x: 0, y: 0,
@@ -434,7 +434,7 @@ public class Toucan : NSObject {
             
             image.drawAtPoint(CGPointMake(0, 0));
             
-            let cgImage = CGBitmapContextCreateImage(context);
+            let cgImage = CGBitmapContextCreateImage(context)!;
             UIGraphicsEndImageContext();
             
             return cgImage;
